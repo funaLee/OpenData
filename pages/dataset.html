@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datasets - OpenData</title>
+    <link href="../css/global.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Load template first -->
+        <div data-include="/components/dataset-card.html"></div>
+
+        <!-- HEADER -->
+        <div data-include="/components/header.html"></div>
+
+        <!-- Overlay -->
+        <div id="overlay" class="overlay"></div>
+
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <h2 class="brand">OpenData</h2>
+                <button id="closeSidebar" class="close-btn">&times;</button>
+            </div>
+
+            <nav class="sidebar-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="dataset.html"><i class="fas fa-database"></i> Datasets</a></li>
+                    <li><a href="paper.html"><i class="fas fa-file-alt"></i> Papers</a></li>
+                    <li class="accordion">
+                        <div class="accordion-header"><i class="fas fa-upload"></i> Upload</div>
+                        <ul class="accordion-body">
+                            <li><a href="../upload/upload-dataset.html">Upload dataset</a></li>
+                            <li><a href="../upload/upload-tag.html">Upload tag</a></li>
+                            <li><a href="../upload/upload-benchmark.html">Upload benchmark</a></li>
+                        </ul>
+                    </li>
+                    <li class="accordion">
+                        <div class="accordion-header"><i class="fas fa-map-marked-alt"></i> Map</div>
+                        <ul class="accordion-body">
+                            <li><a href="../maps/map-institution.html">Search institution</a></li>
+                            <li><a href="../maps/map-author.html">Search author</a></li>
+                        </ul>
+                    </li>
+                    <li class="accordion">
+                        <div class="accordion-header"><i class="fas fa-ellipsis-h"></i> More</div>
+                        <ul class="accordion-body">
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="trend.html">Trends</a></li>
+                            <li><a href="hot-topic.html">Hot topics</a></li>
+                            <li><a href="new.html">New</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <h1 class="search-title">Datasets</h1>
+            <p class="subtitle">Khám phá, phân tích và chia sẻ các bộ dữ liệu chất lượng.</p>
+            
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <a href="../upload/upload-dataset.html" class="action-button upload">
+                    <i class="fas fa-upload"></i>
+                    Upload Dataset
+                </a>
+                <a href="#" class="action-button your-dataset">
+                    <i class="fas fa-database"></i>
+                    Your Dataset
+                </a>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-big dataset-search">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" placeholder="Search Dataset">
+                <button class="filter-button">
+                    <i class="fas fa-filter"></i>
+                    Filters
+                </button>
+            </div>
+        </div>
+
+        <!-- Dataset List -->
+        <h2 class="section-title">Danh sách bộ dữ liệu</h2>
+        <div id="dataset-container">
+            <!-- CIFAR-10 Dataset -->
+            <div id="dataset-card-container__cifar10"></div>
+            
+            <!-- ImageNet Dataset -->
+            <div id="dataset-card-container__imagenet"></div>
+        </div>
+
+        <!-- Help Button -->
+        <button class="help-button">
+            <a href="help.html">
+                <i class="fas fa-question"></i>
+            </a>
+        </button>
+    </div>
+
+    <script src="../js/include.js"></script>
+    <script src="../js/dataset-render.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Wait for components to be loaded
+            const checkComponents = setInterval(() => {
+                if (document.getElementById('dataset-card-template')) {
+                    clearInterval(checkComponents);
+                    
+                    // Render CIFAR-10 Dataset
+                    renderDatasetCard('#dataset-card-container__cifar10', {
+                        image: '../assets/images/cifar-10.png',
+                        title: 'CIFAR-10 (Canadian Institute for Advanced Research, 10 classes)',
+                        author: 'Krizhevsky et al.',
+                        paperUrl: 'http://www.cs.utoronto.ca/~kriz/learning-features-2009-TR.pdf',
+                        paperTitle: 'Learning multiple layers of features from tiny images',
+                        homepage: '#',
+                        tags: ['Image Classification', 'Low-Resolution Images']
+                    });
+
+                    // Render ImageNet Dataset
+                    renderDatasetCard('#dataset-card-container__imagenet', {
+                        image: '../assets/images/imagenet.jpg',
+                        title: 'ImageNet',
+                        author: 'Jia Deng et al.',
+                        paperUrl: 'http://www.image-net.org/papers/imagenet_cvpr09.pdf',
+                        paperTitle: 'ImageNet: A large-scale hierarchical image database',
+                        homepage: '#',
+                        tags: ['Image Classification', 'Large-Scale Dataset']
+                    });
+                }
+            }, 100);
+        });
+    </script>
+</body>
+</html>
