@@ -1,0 +1,114 @@
+/* Search Components */
+.search-small {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-light);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    width: 320px;
+    transition: var(--transition-base);
+    border: 1px solid transparent;
+}
+
+.search-small:focus-within {
+    box-shadow: var(--shadow-sm);
+    border-color: var(--primary-light);
+    background-color: var(--white);
+}
+
+.search-small input {
+    border: none;
+    background: none;
+    outline: none;
+    width: 100%;
+    padding: var(--spacing-xs) var(--spacing-xs);
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.search-small button {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: var(--transition-fast);
+}
+
+.search-small button:hover {
+    background-color: var(--primary-light);
+    transform: scale(1.1);
+}
+
+.search-big {
+    display: flex;
+    align-items: center;
+    background-color: var(--white);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xs);
+    max-width: 720px;
+    margin: 0 auto;
+    box-shadow: var(--shadow-lg),
+                0 0 0 1px rgba(90, 107, 255, 0.08);
+    position: relative;
+    z-index: 2;
+    transition: var(--transition-base);
+}
+
+.search-big:focus-within {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg),
+                0 0 0 2px rgba(90, 107, 255, 0.15);
+}
+
+.search-icon {
+    color: var(--primary-color);
+    font-size: 1.375rem;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    opacity: 0.8;
+}
+
+.search-big input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: var(--spacing-lg) var(--spacing-sm);
+    font-size: 1.125rem;
+    color: var(--text-dark);
+}
+
+.search-big input::placeholder {
+    color: var(--text-light);
+    opacity: 0.7;
+    transition: var(--transition-base);
+}
+
+.search-big input:focus::placeholder {
+    opacity: 0.5;
+}
+
+.search-button {
+    background: var(--gradient-primary);
+    color: var(--white);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--spacing-xs);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(90, 107, 255, 0.3);
+    transition: var(--transition-base);
+}
+
+.search-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 12px rgba(90, 107, 255, 0.4);
+}
