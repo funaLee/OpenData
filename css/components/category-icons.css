@@ -1,0 +1,69 @@
+
+/* Category Icons */
+.category-icons {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.icon-circle {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.icon-circle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    border-radius: inherit;
+    opacity: 0.7;
+    z-index: -1;
+    transition: all 0.3s ease;
+    filter: blur(12px);
+    transform: translateY(4px) scale(0.85);
+}
+
+.icon-circle:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.icon-circle:hover::before {
+    opacity: 0.9;
+    transform: translateY(8px) scale(0.9);
+}
+
+/* Icon images styling */
+.icon-circle img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.icon-circle:hover img {
+    transform: scale(1.1);
+}

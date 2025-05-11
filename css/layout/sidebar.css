@@ -1,0 +1,159 @@
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 280px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 9999;
+    transition: left 0.3s ease-in-out;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.sidebar-menu ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.sidebar-menu li {
+    margin: 18px 0;
+}
+
+.sidebar-menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Overlay nền đen mờ */
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 998;
+  display: none;
+}
+
+.overlay.active {
+  display: block;
+}
+
+/* Sidebar chính */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 280px;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
+  padding: 20px 16px;
+  z-index: 999;
+  transition: left 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+/* Header của sidebar */
+.sidebar-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+/* Nút đóng sidebar */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* Danh sách menu */
+.sidebar-menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 24px;
+  width: 100%;
+}
+
+.sidebar-menu li {
+  text-align: left;
+  padding: 12px 8px;
+  width: 100%;
+}
+
+/* Link trong menu */
+.sidebar-menu a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Accordion phần cha */
+.accordion-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Accordion phần con */
+.accordion-body {
+  display: none;
+  margin-top: 5px;
+  margin-left: 28px;
+  flex-direction: column;
+}
+
+.accordion-body li {
+  padding: 6px 0;
+}
+
+.accordion.open .accordion-body {
+  display: flex;
+}
